@@ -15,7 +15,6 @@ class ChatAi extends StatefulWidget {
 class _ChatAiState extends State<ChatAi> {
   final Gemini gemini = Gemini.instance;
   List<ChatMessage> messages = [];
-  final _fieldController = TextEditingController();
   ChatUser currentuser = ChatUser(
     id: '0',
     firstName: 'User',
@@ -125,61 +124,3 @@ class _ChatAiState extends State<ChatAi> {
       }
   }
   }
-
-
-
-
-
-
- // Widget _buildMessageInput() {
-  //   return Row(
-  //     // crossAxisAlignment: CrossAxisAlignment.end,
-  //     // mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //     children: [
-  //       Expanded(
-  //         child: SizedBox(
-  //           height: 45,
-  //           child: TextField(
-  //             enableSuggestions: true,
-  //             controller: _fieldController,
-  //             decoration: InputDecoration(
-  //                 hintText: 'Type Here',
-  //                 fillColor: AppDefault.fieldColor,
-  //                 filled: true,
-  //                 hintStyle: TextStyle(
-  //                   fontSize: 15,
-  //                   fontWeight: FontWeight.normal,
-  //                   color: AppDefault.textColor,
-  //                 ),
-  //                 focusedBorder: const OutlineInputBorder(
-  //                     borderRadius: BorderRadius.all(Radius.circular(40)),
-  //                     borderSide: BorderSide(
-  //                       style: BorderStyle.solid,
-  //                       width: 1.0,
-  //                       color: Colors.black,
-  //                     ))),
-  //           ),
-  //         ),
-  //       ),
-  //       Container(
-  //           alignment: Alignment.center,
-  //           height: 45,
-  //           width: 60,
-  //           decoration:
-  //               BoxDecoration(color: Colors.green[900], shape: BoxShape.circle),
-  //           child: IconButton(
-  //             onPressed: sendMessage,
-  //             icon: const Icon(
-  //               Icons.send,
-  //               size: 26,
-  //               color: Colors.white,
-  //             ),
-  //           )),
-  //     ],
-  //   );
-  // }
-
-  // void sendMessage() async {
-  // }
-
-  // _buildQueriesLIST() {}
