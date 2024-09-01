@@ -1,4 +1,3 @@
-
 import 'package:ai_buddy/pages/Chat.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -24,7 +23,12 @@ class _splashScreenState extends State<SplashScreen> {
             child: AnimatedTextKit(
               onFinished: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) =>const  ChatAi()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => FirebaseAuth.instance.currentUser != null
+                ? const HomeScreen()
+                : const signIn(),
+          ));
               },
               animatedTexts: [
                 TypewriterAnimatedText(
@@ -59,7 +63,6 @@ class _splashScreenState extends State<SplashScreen> {
                   speed: const Duration(milliseconds: 150),
                   cursor: "!",
                 ),
-                
               ],
               isRepeatingAnimation: false,
               displayFullTextOnTap: true,
